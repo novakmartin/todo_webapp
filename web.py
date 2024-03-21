@@ -9,8 +9,8 @@ def add_todo():
     fns.write_todos(todos)
 
 
-st.title('My todo App')
-st.subheader('This todo app increases your productivity')
+st.title('Slovenia trip inventory')
+st.subheader('What do we need on the trip?')
 
 todos = fns.get_todos()
 

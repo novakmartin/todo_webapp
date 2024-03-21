@@ -4,7 +4,7 @@ import functions as fns
 
 def add_todo():
     new_todo = st.session_state['user_input']+'\n'
-    if new_todo == '':
+    if new_todo == '\n':
         return
     todos = fns.get_todos()
     todos.append(new_todo)
@@ -29,3 +29,4 @@ st.text_input(label='Add a Todo',
               label_visibility='hidden',
               on_change=add_todo,
               key='user_input')
+

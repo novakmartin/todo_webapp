@@ -4,6 +4,8 @@ import functions as fns
 
 def add_todo():
     new_todo = st.session_state['user_input']+'\n'
+    if new_todo == '':
+        return
     todos = fns.get_todos()
     todos.append(new_todo)
     fns.write_todos(todos)
@@ -23,7 +25,7 @@ for index, item in enumerate(todos):
         st.rerun()
 
 st.text_input(label='Add a Todo',
-              placeholder="Add a Todo..",
+              placeholder="Add item..",
               label_visibility='hidden',
               on_change=add_todo,
               key='user_input')
